@@ -29,23 +29,30 @@
     <main>
 
         <section class="hero">
-            <h1>Find Local Services</h1>
-            <form class="hero-search">
-                <div class="search-group">
-                    <input type="text" class="service-input" placeholder="What Services Do You Need?">
-                    <button type="submit" class="icon-btn" aria-label="Search">
-                        🔍
-                    </button>
-                </div>
-
-
-                <!-- <div class="location-group">
-                    <input type="text" class="location-input" placeholder="Location">
-                    <button type="button" class="icon-btn" aria-label="Use location">
-                        📍
-                    </button>
-                </div>   -->
-            </form>
+            <div class="hero-background"></div>
+            <div class="hero-content">
+                <h1>Find local services</h1>
+                <form class="hero-search">
+                    <div class="search-group">
+                        <input type="text" class="service-input" placeholder="What service do you need?">
+                        <button type="submit" class="search-btn" aria-label="Search">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M21 21L15 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="location-indicator">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M21 10C21 17 12 23 12 23C12 23 3 17 3 10C3 7.61305 3.94821 5.32387 5.63604 3.63604C7.32387 1.94821 9.61305 1 12 1C14.3869 1 16.6761 1.94821 18.364 3.63604C20.0518 5.32387 21 7.61305 21 10Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span>Current location</span>
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                </form>
+            </div>
         </section>
 
 
@@ -707,11 +714,201 @@
         </section>
         <!-- Service Preview Content Here -->
 
+        <!-- FAQ Section -->
+        <section class="faq-section">
+            <div class="faq-container">
+                <h2 class="faq-title">Frequently Asked Questions</h2>
+                <p class="faq-subtitle">Get answers to common questions about Handyman.</p>
+                
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>How do I know the service provider is trustworthy?</span>
+                            <span class="faq-icon">▲</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>All service providers go through a verification process including background checks and skill assessments. You can also review ratings, certifications, and customer feedback before making a booking.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>How fast can I get a service provider?</span>
+                            <span class="faq-icon">▲</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Most requests are matched within minutes. Response time depends on your location and service type, but we prioritize connecting you with available professionals in your area as quickly as possible.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>What if I'm not satisfied with the work?</span>
+                            <span class="faq-icon">▲</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Your satisfaction is our priority. If you're not happy with the service, contact our support team within 48 hours. We'll work with you and the service provider to resolve the issue, which may include a redo, refund, or alternative solution.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>What types of services are available?</span>
+                            <span class="faq-icon">▲</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>We offer a wide range of services including home repairs, electrical work, plumbing, carpentry, cleaning, beauty services, photography, and more. Browse our categories to see all available services in your area.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>How do I pay for services?</span>
+                            <span class="faq-icon">▲</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>We accept various payment methods including credit cards, debit cards, and mobile payments. Payment is processed securely through our platform, and you only pay after the service is completed to your satisfaction.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="testimonials-section">
+            <div class="testimonials-container">
+                <h2 class="testimonials-title">What Our Customers Say</h2>
+                <p class="testimonials-subtitle">Trusted by thousands of Nigerians</p>
+                
+                <div class="testimonials-grid">
+                    <div class="testimonial-card">
+                        <div class="testimonial-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M20.84 4.61C20.3292 4.099 19.7228 3.69364 19.0554 3.41708C18.3879 3.14052 17.6725 2.99817 16.95 2.99817C16.2275 2.99817 15.5121 3.14052 14.8446 3.41708C14.1772 3.69364 13.5708 4.099 13.06 4.61L12 5.67L10.94 4.61C9.9083 3.57831 8.50903 2.99871 7.05 2.99871C5.59096 2.99871 4.19169 3.57831 3.16 4.61C2.1283 5.64169 1.54871 7.04097 1.54871 8.5C1.54871 9.95903 2.1283 11.3583 3.16 12.39L4.22 13.45L12 21.23L19.78 13.45L20.84 12.39C21.351 11.8792 21.7564 11.2728 22.0329 10.6054C22.3095 9.93789 22.4518 9.22248 22.4518 8.5C22.4518 7.77752 22.3095 7.0621 22.0329 6.39464C21.7564 5.72718 21.351 5.12075 20.84 4.61Z" fill="white"/>
+                            </svg>
+                        </div>
+                        <h3 class="testimonial-highlight">Fast & Reliable</h3>
+                        <p class="testimonial-quote">"Handyman saved me when my AC broke down during a heatwave. The technician arrived in 20 minutes and fixed everything perfectly!"</p>
+                        <div class="testimonial-stars">
+                            <span>★★★★★</span>
+                        </div>
+                        <div class="testimonial-author">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 12C14.7614 12 17 9.76142 17 7C17 4.23858 14.7614 2 12 2C9.23858 2 7 4.23858 7 7C7 9.76142 9.23858 12 12 12Z" fill="currentColor"/>
+                                <path d="M12.0002 14.5C6.99016 14.5 2.91016 17.86 2.91016 22C2.91016 22.28 3.13016 22.5 3.41016 22.5H20.5902C20.8702 22.5 21.0902 22.28 21.0902 22C21.0902 17.86 17.0102 14.5 12.0002 14.5Z" fill="currentColor"/>
+                            </svg>
+                            <span>Jane Doe</span>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div class="testimonial-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M9 16.17L4.83 12L3.41 13.41L9 19L21 7L19.59 5.59L9 16.17Z" fill="white"/>
+                            </svg>
+                        </div>
+                        <h3 class="testimonial-highlight">Professional Service</h3>
+                        <p class="testimonial-quote">"Excellent communication and on-time service. The Handyman team connected me with a skilled electrician who solved my wiring issues quickly."</p>
+                        <div class="testimonial-stars">
+                            <span>★★★★☆</span>
+                        </div>
+                        <div class="testimonial-author">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 12C14.7614 12 17 9.76142 17 7C17 4.23858 14.7614 2 12 2C9.23858 2 7 4.23858 7 7C7 9.76142 9.23858 12 12 12Z" fill="currentColor"/>
+                                <path d="M12.0002 14.5C6.99016 14.5 2.91016 17.86 2.91016 22C2.91016 22.28 3.13016 22.5 3.41016 22.5H20.5902C20.8702 22.5 21.0902 22.28 21.0902 22C21.0902 17.86 17.0102 14.5 12.0002 14.5Z" fill="currentColor"/>
+                            </svg>
+                            <span>John Smith</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
     </main>
 
     <footer>
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3 class="footer-heading">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">For Users</a></li>
+                        <li><a href="#">For Service Providers</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Knowledge Base</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
 
+                <div class="footer-column">
+                    <h3 class="footer-heading">Service Areas</h3>
+                    <div class="service-areas">
+                        <a href="#">Lagos Island</a>
+                        <a href="#">Ikeja</a>
+                        <a href="#">Abule Egba</a>
+                        <a href="#">Oshodi</a>
+                        <a href="#">Lekki</a>
+                        <a href="#">VI</a>
+                        <a href="#">Magodo</a>
+                        <a href="#">Surulere</a>
+                    </div>
+                </div>
 
+                <div class="footer-column">
+                    <h3 class="footer-heading">Follow Us</h3>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon" aria-label="Facebook">
+                            <span>f</span>
+                        </a>
+                        <a href="#" class="social-icon" aria-label="Instagram">
+                            <span>ig</span>
+                        </a>
+                        <a href="#" class="social-icon" aria-label="Twitter">
+                            <span>X</span>
+                        </a>
+                        <a href="#" class="social-icon" aria-label="LinkedIn">
+                            <span>in</span>
+                        </a>
+                    </div>
+                    <div class="footer-contact">
+                        <div class="contact-item">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M21 10C21 17 12 23 12 23C12 23 3 17 3 10C3 7.61305 3.94821 5.32387 5.63604 3.63604C7.32387 1.94821 9.61305 1 12 1C14.3869 1 16.6761 1.94821 18.364 3.63604C20.0518 5.32387 21 7.61305 21 10Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span>Lagos, Nigeria</span>
+                        </div>
+                        <div class="contact-item">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M22 16.92V19.92C22.0011 20.1985 21.9441 20.4742 21.8325 20.7292C21.7209 20.9842 21.5573 21.2128 21.3528 21.3992C21.1483 21.5856 20.9074 21.7257 20.6446 21.8112C20.3818 21.8967 20.1028 21.9257 19.828 21.896C16.4272 21.5836 13.1361 20.5306 10.152 18.808C7.40971 17.2146 5.03264 15.0014 3.182 12.332C1.45579 9.65178 0.503383 6.6157 0.398 3.496C0.368303 3.22152 0.39712 2.9429 0.482461 2.68026C0.567802 2.41762 0.707581 2.17668 0.893583 1.9719C1.07959 1.76712 1.30773 1.60305 1.56257 1.49081C1.81741 1.37857 2.09317 1.32079 2.372 1.321H5.372C6.07619 1.32089 6.75249 1.59988 7.25258 2.09888C7.75267 2.59788 8.03166 3.27418 8.032 3.978C8.09413 4.988 8.31026 5.98398 8.672 6.928C8.94479 7.61617 9.38733 8.22843 9.96001 8.70701C10.5327 9.18559 11.2185 9.51582 11.952 9.668C12.556 9.798 13.17 9.798 13.774 9.668C14.5075 9.51582 15.1933 9.18559 15.766 8.70701C16.3387 8.22843 16.7812 7.61617 17.054 6.928C17.4157 5.98398 17.6319 4.988 17.694 3.978C17.6943 3.27418 17.9733 2.59788 18.4734 2.09888C18.9735 1.59988 19.6498 1.32089 20.354 1.321H23.354C23.6328 1.32079 23.9086 1.37857 24.1634 1.49081C24.4183 1.60305 24.6464 1.76712 24.8324 1.9719C25.0184 2.17668 25.1582 2.41762 25.2435 2.68026C25.3289 2.9429 25.3577 3.22152 25.328 3.496C25.2226 6.6157 24.2702 9.65178 22.544 12.332" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <a href="tel:+2347010293244">+234 701 029 3244</a>
+                        </div>
+                        <div class="contact-item">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="L22 6L12 13L2 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <a href="mailto:connecta@gmail.com">connecta@gmail.com</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-divider"></div>
+
+            <div class="footer-bottom">
+                <p class="copyright">© 2025 Handyman. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <span>|</span>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
     </footer>
 
 
@@ -721,6 +918,24 @@
 
         toggle.addEventListener('click', () => {
             menu.classList.toggle('show');
+        });
+
+        // FAQ Accordion functionality
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const faqItem = question.parentElement;
+                const isActive = faqItem.classList.contains('active');
+                
+                // Close all FAQ items
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    item.classList.remove('active');
+                });
+                
+                // Open clicked item if it wasn't active
+                if (!isActive) {
+                    faqItem.classList.add('active');
+                }
+            });
         });
     </script>
 
