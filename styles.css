@@ -63,6 +63,7 @@ header {
     width: 100%;
     box-sizing: border-box;
     border-bottom: 1px solid var(--border);
+    z-index: 100;
 }
 
 
@@ -73,10 +74,51 @@ header {
 
 
 .nav-toggle {
-    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    padding: 0;
     cursor: pointer;
     background: none;
     border: none;
+    color: var(--text-primary);
+    transition: color 0.2s ease;
+}
+
+.nav-toggle:hover {
+    color: var(--primary);
+}
+
+.nav-toggle {
+    position: relative;
+}
+
+.nav-toggle .icon-menu,
+.nav-toggle .icon-close {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 24px;
+    height: 24px;
+}
+
+.nav-toggle .icon-menu {
+    display: block;
+}
+
+.nav-toggle .icon-close {
+    display: none;
+}
+
+.nav-toggle[aria-expanded="true"] .icon-menu {
+    display: none;
+}
+
+.nav-toggle[aria-expanded="true"] .icon-close {
+    display: block;
 }
 
 .nav-menu {
@@ -90,7 +132,8 @@ header {
     flex-direction: column;
     width: 200px;
     padding: 0.5rem 0;
-    box-shadow: 0 2px 8px var(--shadow);
+    box-shadow: 0 4px 12px var(--shadow-hover);
+    z-index: 101;
 }
 
 .nav-menu.show {
@@ -166,7 +209,9 @@ header {
     height: 100%;
     background-image: url('https://images.unsplash.com/photo-1449824913935-59a10b8d2000?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
     background-size: cover;
-    background-position: center;
+    background-position: center center;
+    background-repeat: no-repeat;
+    transform-origin: center center;
     filter: blur(8px);
     transform: scale(1.1);
     z-index: 0;

@@ -5,15 +5,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Connecta</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css?v=2">
 </head>
 
 <body>
     <header>
         <div class="logo">Connecta</div>
 
-        <button class="nav-toggle" aria-label="Toggle navigation">
-            ☰
+        <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+            <svg class="icon-menu" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3 12H21M3 6H21M3 18H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+            <svg class="icon-close" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
         </button>
 
         <nav class="nav-menu">
@@ -718,7 +723,7 @@
         <section class="faq-section">
             <div class="faq-container">
                 <h2 class="faq-title">Frequently Asked Questions</h2>
-                <p class="faq-subtitle">Get answers to common questions about Handyman.</p>
+                <p class="faq-subtitle">Get answers to common questions about Connecta.</p>
                 
                 <div class="faq-list">
                     <div class="faq-item">
@@ -788,7 +793,7 @@
                             </svg>
                         </div>
                         <h3 class="testimonial-highlight">Fast & Reliable</h3>
-                        <p class="testimonial-quote">"Handyman saved me when my AC broke down during a heatwave. The technician arrived in 20 minutes and fixed everything perfectly!"</p>
+                        <p class="testimonial-quote">"Connecta saved me when my AC broke down during a heatwave. The technician arrived in 20 minutes and fixed everything perfectly!"</p>
                         <div class="testimonial-stars">
                             <span>★★★★★</span>
                         </div>
@@ -808,7 +813,7 @@
                             </svg>
                         </div>
                         <h3 class="testimonial-highlight">Professional Service</h3>
-                        <p class="testimonial-quote">"Excellent communication and on-time service. The Handyman team connected me with a skilled electrician who solved my wiring issues quickly."</p>
+                        <p class="testimonial-quote">"Excellent communication and on-time service. The Connecta team connected me with a skilled electrician who solved my wiring issues quickly."</p>
                         <div class="testimonial-stars">
                             <span>★★★★☆</span>
                         </div>
@@ -901,7 +906,7 @@
             <div class="footer-divider"></div>
 
             <div class="footer-bottom">
-                <p class="copyright">© 2025 Handyman. All rights reserved.</p>
+                <p class="copyright">© 2025 Connecta. All rights reserved.</p>
                 <div class="footer-legal">
                     <a href="#">Privacy Policy</a>
                     <span>|</span>
@@ -917,7 +922,8 @@
         const menu = document.querySelector('.nav-menu');
 
         toggle.addEventListener('click', () => {
-            menu.classList.toggle('show');
+            const isOpen = menu.classList.toggle('show');
+            toggle.setAttribute('aria-expanded', isOpen);
         });
 
         // FAQ Accordion functionality
