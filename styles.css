@@ -41,6 +41,7 @@
 
 html {
     overflow-x: hidden;
+    overflow-y: auto;
 }
 
 body {
@@ -48,6 +49,7 @@ body {
     padding: 0;
     color: var(--text-primary);
     overflow-x: hidden;
+    overflow-y: auto;
     width: 100%;
     max-width: 100%;
 }
@@ -73,8 +75,19 @@ header {
     width: 100%;
     box-sizing: border-box;
     border-bottom: 1px solid var(--border);
-    z-index: 100;
+    z-index: 1000;
     overflow-x: hidden;
+    overflow-y: visible;
+    height: auto;
+}
+
+/* Ensure nav dropdown is not clipped or scrollable */
+header .nav-menu,
+header .nav-menu ul {
+    overflow: visible !important;
+    max-height: none !important;
+    height: auto !important;
+    min-height: auto !important;
 }
 
 
@@ -139,27 +152,41 @@ header {
     background: var(--bg-primary);
     border: 1px solid var(--border);
     display: none;
-    /* hidden by default */
     flex-direction: column;
     width: 200px;
     padding: 0.5rem 0;
     box-shadow: 0 4px 12px var(--shadow-hover);
-    z-index: 101;
+    z-index: 1000;
+    overflow: visible;
+    max-height: none;
+    height: auto;
+    min-height: auto;
 }
 
 .nav-menu.show {
     display: flex;
     animation: fadeIn 0.3s ease;
+    overflow: visible !important;
+    max-height: none !important;
+    height: auto !important;
 }
 
 .nav-menu ul {
     list-style: none;
     padding: 0;
     margin: 0;
+    overflow: visible;
+    max-height: none;
+    height: auto;
+    min-height: auto;
+    display: flex;
+    flex-direction: column;
 }
 
 .nav-menu li {
     padding: 0.5rem 1rem;
+    flex-shrink: 0;
+    white-space: nowrap;
 }
 
 .nav-menu li a {
@@ -213,6 +240,7 @@ header {
     width: 100%;
     max-width: 100%;
     box-sizing: border-box;
+    z-index: 1;
 }
 
 .hero-background {
@@ -249,6 +277,8 @@ header {
     width: 100%;
     max-width: 600px;
     margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 .hero h1 {
@@ -265,6 +295,8 @@ header {
     gap: 1rem;
     max-width: 100%;
     margin: 0 auto;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .search-group {
@@ -274,6 +306,9 @@ header {
     border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 4px 12px var(--shadow-hover);
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
 .service-input {
@@ -284,6 +319,8 @@ header {
     outline: none;
     background: var(--bg-primary);
     color: var(--text-primary);
+    min-width: 0;
+    box-sizing: border-box;
 }
 
 .service-input::placeholder {
@@ -322,9 +359,12 @@ header {
     border-radius: 20px;
     backdrop-filter: blur(10px);
     width: fit-content;
+    max-width: 100%;
     margin: 0 auto;
     cursor: pointer;
     transition: background-color 0.2s ease;
+    box-sizing: border-box;
+    white-space: nowrap;
 }
 
 .location-indicator:hover {
@@ -343,46 +383,87 @@ header {
     .hero {
         min-height: 250px;
         padding: 2rem 1rem;
-        margin-left: -1rem;
-        margin-right: -1rem;
-        width: calc(100% + 2rem);
+        margin-left: 0;
+        margin-right: 0;
+        width: 100%;
     }
 
     .hero-background {
         transform: scale(1.05);
     }
 
+    .hero-content {
+        padding: 0;
+    }
+
     .hero h1 {
         font-size: 2rem;
         margin-bottom: 1.5rem;
+        padding: 0;
+    }
+
+    .hero-search {
+        padding: 0;
     }
 
     .service-input {
-        padding: 14px 18px;
+        padding: 14px 16px;
         font-size: 15px;
     }
 
     .search-btn {
-        padding: 14px 18px;
+        padding: 14px 16px;
+        flex-shrink: 0;
     }
 
     .location-indicator {
         font-size: 13px;
         padding: 8px 14px;
+        max-width: calc(100% - 2rem);
     }
 }
 
 @media (max-width: 500px) {
+    .hero {
+        padding: 1.5rem 1rem;
+    }
+
     .hero h1 {
         font-size: 1.75rem;
+        margin-bottom: 1.25rem;
+    }
+
+    .hero-search {
+        gap: 0.875rem;
     }
 
     .search-group {
         border-radius: 10px;
     }
 
+    .service-input {
+        padding: 12px 14px;
+        font-size: 14px;
+    }
+
     .search-btn {
+        padding: 12px 14px;
         border-radius: 0 10px 10px 0;
+    }
+
+    .location-indicator {
+        font-size: 12px;
+        padding: 7px 12px;
+    }
+
+    .category-rail {
+        padding: 12px 1rem;
+        gap: 10px;
+    }
+
+    .category-card {
+        min-width: 85px;
+        padding: 12px 14px;
     }
 }
 
@@ -407,10 +488,12 @@ header {
 
 .service {
     padding-top: 8px;
-    overflow-x: auto;
+    overflow-x: hidden;
     display: flex;
     justify-content: center;
     width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
 
@@ -448,12 +531,27 @@ header {
     gap: 12px;
     margin: 0 auto;
     overflow-x: auto;
-    padding: 12px;
+    padding: 12px 1rem;
     scrollbar-width: none;
-    width: fit-content;
+    width: 100%;
     max-width: 100%;
     box-sizing: border-box;
     justify-content: center;
+    -webkit-overflow-scrolling: touch;
+}
+
+.category-rail::before,
+.category-rail::after {
+    content: '';
+    flex-shrink: 0;
+    width: 0;
+}
+
+@media (max-width: 768px) {
+    .category-rail {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
 }
 
 .category-rail::-webkit-scrollbar {
