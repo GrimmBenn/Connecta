@@ -39,16 +39,26 @@
     --error: #F56565;
 }
 
+html {
+    overflow-x: hidden;
+}
+
 body {
     margin: 0;
     padding: 0;
     color: var(--text-primary);
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100%;
 }
 
 main {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 1rem;
+    width: 100%;
+    box-sizing: border-box;
+    overflow-x: hidden;
 }
 
 header {
@@ -64,6 +74,7 @@ header {
     box-sizing: border-box;
     border-bottom: 1px solid var(--border);
     z-index: 100;
+    overflow-x: hidden;
 }
 
 
@@ -199,6 +210,9 @@ header {
     justify-content: center;
     overflow: hidden;
     border-radius: 0;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
 .hero-background {
@@ -215,6 +229,7 @@ header {
     filter: blur(8px);
     transform: scale(1.1);
     z-index: 0;
+    overflow: hidden;
 }
 
 .hero-background::after {
@@ -328,6 +343,13 @@ header {
     .hero {
         min-height: 250px;
         padding: 2rem 1rem;
+        margin-left: -1rem;
+        margin-right: -1rem;
+        width: calc(100% + 2rem);
+    }
+
+    .hero-background {
+        transform: scale(1.05);
     }
 
     .hero h1 {
@@ -387,7 +409,8 @@ header {
     padding-top: 8px;
     overflow-x: auto;
     display: flex;
-
+    justify-content: center;
+    width: 100%;
 }
 
 
@@ -424,11 +447,13 @@ header {
     display: flex;
     gap: 12px;
     margin: 0 auto;
-
     overflow-x: auto;
     padding: 12px;
-
     scrollbar-width: none;
+    width: fit-content;
+    max-width: 100%;
+    box-sizing: border-box;
+    justify-content: center;
 }
 
 .category-rail::-webkit-scrollbar {
@@ -731,6 +756,9 @@ footer {
     padding: 3rem 1rem 1.5rem;
     margin-top: 0;
     width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow-x: hidden;
 }
 
 .footer-container {
