@@ -63,40 +63,77 @@ main {
     overflow-x: hidden;
 }
 
+/* Nav bar */
 header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding: 1rem;
-    background: var(--bg-primary);
-    position: relative;
+    justify-content: space-between;
+    padding: 0.75rem 1.5rem;
     max-width: 1200px;
     margin: 0 auto;
     width: 100%;
     box-sizing: border-box;
+    background: var(--bg-primary);
     border-bottom: 1px solid var(--border);
-    z-index: 1000;
-    overflow-x: hidden;
-    overflow-y: visible;
-    height: auto;
+    box-shadow: 0 1px 3px var(--shadow);
 }
 
-/* Ensure nav dropdown is not clipped or scrollable */
-header .nav-menu,
-header .nav-menu ul {
-    overflow: visible !important;
-    max-height: none !important;
-    height: auto !important;
-    min-height: auto !important;
-}
-
-
-.logo {
+header .logo {
+    font-size: 1.25rem;
+    font-weight: 700;
     color: var(--primary);
-    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.2s ease;
 }
 
+header .logo:hover {
+    color: var(--primary-dark);
+}
 
+.nav {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.nav-list {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-list li {
+    display: inline-block;
+}
+
+.nav-list a {
+    display: block;
+    padding: 0.5rem 0.875rem;
+    color: var(--text-primary);
+    text-decoration: none;
+    font-size: 0.9375rem;
+    font-weight: 500;
+    border-radius: 8px;
+    transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+.nav-list a:hover {
+    color: var(--primary);
+    background: var(--bg-secondary);
+}
+
+.nav-list a:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+}
+
+/* Nav toggle (hamburger) – always visible; menu hidden until clicked */
 .nav-toggle {
     display: flex;
     align-items: center;
@@ -104,33 +141,23 @@ header .nav-menu ul {
     width: 44px;
     height: 44px;
     padding: 0;
-    cursor: pointer;
-    background: none;
     border: none;
+    background: none;
     color: var(--text-primary);
-    transition: color 0.2s ease;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: color 0.2s ease, background-color 0.2s ease;
 }
 
 .nav-toggle:hover {
     color: var(--primary);
-}
-
-.nav-toggle {
-    position: relative;
+    background: var(--bg-secondary);
 }
 
 .nav-toggle .icon-menu,
 .nav-toggle .icon-close {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     width: 24px;
     height: 24px;
-}
-
-.nav-toggle .icon-menu {
-    display: block;
 }
 
 .nav-toggle .icon-close {
@@ -145,75 +172,62 @@ header .nav-menu ul {
     display: block;
 }
 
+/* Menu dropdown – hidden by default, shown when .show is added (clicking the icon) */
 .nav-menu {
     position: absolute;
     top: 100%;
     right: 0;
-    background: var(--bg-primary);
-    border: 1px solid var(--border);
+    left: auto;
+    width: 20%;
+    min-width: 180px;
+    max-width: 280px;
     display: none;
     flex-direction: column;
-    width: 200px;
-    padding: 0.5rem 0;
+    margin: 0;
+    padding: 0.5rem;
+    background: var(--bg-primary);
+    border-bottom: 1px solid var(--border);
+    border-radius: 0 0 8px 8px;
     box-shadow: 0 4px 12px var(--shadow-hover);
-    z-index: 1000;
-    overflow: visible;
-    max-height: none;
-    height: auto;
-    min-height: auto;
 }
 
 .nav-menu.show {
     display: flex;
-    animation: fadeIn 0.3s ease;
-    overflow: visible !important;
-    max-height: none !important;
-    height: auto !important;
 }
 
 .nav-menu ul {
     list-style: none;
-    padding: 0;
     margin: 0;
-    overflow: visible;
-    max-height: none;
-    height: auto;
-    min-height: auto;
+    padding: 0;
     display: flex;
     flex-direction: column;
+    gap: 0.25rem;
 }
 
 .nav-menu li {
-    padding: 0.5rem 1rem;
-    flex-shrink: 0;
-    white-space: nowrap;
+    display: block;
 }
 
-.nav-menu li a {
-    text-decoration: none;
+.nav-menu a {
+    display: block;
+    padding: 0.75rem 1rem;
     color: var(--text-primary);
-    transition: color 0.2s ease;
+    text-decoration: none;
+    font-size: 0.9375rem;
+    font-weight: 500;
+    border-radius: 8px;
+    transition: color 0.2s ease, background-color 0.2s ease;
 }
 
-.nav-menu li a:hover {
+.nav-menu a:hover {
     color: var(--primary);
+    background: var(--bg-secondary);
 }
 
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
-    }
+.nav-menu a:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
 }
-
-
-
-
-
-
 
 
 
@@ -719,6 +733,7 @@ header .nav-menu ul {
     color: var(--text-tertiary);
     font-size: 0.75rem;
     transition: transform 0.3s ease, color 0.2s ease;
+    transform: rotate(180deg);
 }
 
 .faq-item.active .faq-icon {
@@ -726,7 +741,7 @@ header .nav-menu ul {
 }
 
 .faq-item.active .faq-icon {
-    transform: rotate(180deg);
+    transform: rotate(0deg);
 }
 
 .faq-answer {
