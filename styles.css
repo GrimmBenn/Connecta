@@ -502,9 +502,9 @@ header .logo:hover {
 
 .service {
     padding-top: 8px;
-    overflow-x: hidden;
+    overflow-x: visible;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     width: 100%;
     max-width: 100%;
     box-sizing: border-box;
@@ -543,14 +543,14 @@ header .logo:hover {
 .category-rail {
     display: flex;
     gap: 12px;
-    margin: 0 auto;
+    margin: 0;
     overflow-x: auto;
     padding: 12px 1rem;
     scrollbar-width: none;
     width: 100%;
     max-width: 100%;
     box-sizing: border-box;
-    justify-content: center;
+    justify-content: flex-start;
     -webkit-overflow-scrolling: touch;
 }
 
