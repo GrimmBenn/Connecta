@@ -1,38 +1,41 @@
 /* Color Palette Variables */
 :root {
     /* Primary Brand Colors */
-    --primary: #1FB3C7; /* Cyan/Turquoise - from logo */
+    --primary: #1FB3C7;
+    /* Cyan/Turquoise - from logo */
     --primary-dark: #1899A8;
     --primary-light: #4FC5D4;
-    
+
     /* Secondary Colors */
-    --secondary: #2F5A6D; /* Dark Teal - from footer */
+    --secondary: #2F5A6D;
+    /* Dark Teal - from footer */
     --secondary-light: #3A6B7F;
     --secondary-dark: #1E3D4A;
-    
+
     /* Accent Colors */
-    --accent: #FF6B6B; /* Coral/Red for highlights */
+    --accent: #FF6B6B;
+    /* Coral/Red for highlights */
     --accent-light: #FF8E8E;
     --accent-dark: #E55555;
-    
+
     /* Text Colors */
     --text-primary: #2D3748;
     --text-secondary: #4A5568;
     --text-tertiary: #718096;
     --text-light: rgba(255, 255, 255, 0.9);
-    
+
     /* Background Colors */
     --bg-primary: #FFFFFF;
     --bg-secondary: #F8FAFD;
     --bg-tertiary: #F6F6F6;
     --bg-hover: #ECECEC;
-    
+
     /* Border & Shadow Colors */
     --border: #E2E8F0;
     --border-dark: #CBD5E0;
     --shadow: rgba(0, 0, 0, 0.08);
     --shadow-hover: rgba(0, 0, 0, 0.12);
-    
+
     /* Special Colors */
     --star: #FFD700;
     --success: #48BB78;
@@ -580,7 +583,9 @@ header .logo:hover {
 
 
 
-
+.provider-row::webkit-scrollbar {
+    display: none;
+}
 
 
 
@@ -591,6 +596,7 @@ header .logo:hover {
     gap: 12px;
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
 }
 
 
@@ -1033,6 +1039,7 @@ footer {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+
     .faq-section,
     .testimonials-section {
         padding: 2rem 1rem;
@@ -1068,6 +1075,7 @@ footer {
 }
 
 @media (max-width: 480px) {
+
     .faq-title,
     .testimonials-title {
         font-size: 1.5rem;
